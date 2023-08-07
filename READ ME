@@ -1,0 +1,29 @@
+READ ME
+
+The purpose of this URCap is to provide a convenient way to setup the robot’s movements and brazing joints parameters for sequential brazing of an arbitrary number of joints. 
+
+ 
+
+This URCap delivers 2 nodes to Polyscope: 
+
+Brazing template node (“UF Brazing Template”) 
+
+Brazing node (“UF Brazing Node”). 
+
+Brazing Template node 
+
+Brazing Template node generate user selected number of joints to braze. 
+
+Each spawned joint is a folder node consisting of a move node designated “Approach Nodes” and a move node designated “Joint Nodes”.  
+
+Approach nodes are meant to guide the robot from its current position to the position close for the target brazing joint. Approach Node Parameters’ section of the “UF Brazing” node, allows to set speed and acceleration of the robot, while traversing approach nodes. Since this trajectory doesn’t require precise movements “Approach Node Parameters” are meant to be faster than those for Joint Nodes. Additionally, to reduce robot lock-ups approach nodes use MoveJ type of movement and both speed and acceleration is set in deg/sec of rotation of robot’s joints. 
+
+Joint nodes, namely “JoinX” node and “ExitX” (X – is number of the joint) nodes, are used to get the coil around the target joint (“JointX” nodes) and to go back to the exit position (“ExitX” nodes). These robot movements in between these joints are meant to be as precise as possible so the robot will use MoveL movements with the speed and acceleration set in “Joint Node Parameters”. Note that joint nodes parameters are rated in mm/sec. In many practical cases “ExitX” nodes can be linked to the last preceding “Approach Node” for the robot to return to the same position it departed from to get to the joint. 
+
+ 
+
+Brazing node 
+
+Brazing node when run sets the heating power (via a 4-20mA analog output) over the selected time delay to apply the heat. Its internal operation is to set the analog output to the selected value, then to enable a digital output to start the heat, then wait for the selected time, then disable the digital output to end the heat. 
+
+The analog and digital outputs for the brazing node can be selected in the node itself (for the outside of the template, standalone operation) or in the “UF Brazing” template node. In the latter case the selected ports will propagate to all spawned brazing nodes inside of the template.  
