@@ -1,4 +1,4 @@
-READ ME
+README
 
 The purpose of this URCap is to provide a convenient way to setup the robot’s movements and brazing joints parameters for sequential brazing of an arbitrary number of joints. 
 
@@ -26,4 +26,8 @@ Brazing node
 
 The brazing node when run, sets the heating power (via a 4-20mA analog output) over the selected time delay to apply the heat. Its internal operation sets the analog output to the selected value, enables a digital output to start the heat, waits for the chosen time, and turns off the digital output to end the heat. 
 
-The analog and digital outputs for the brazing node can be selected in the node itself (for the outside of the template, standalone operation) or in the “UF Brazing” template node. In the latter case, the selected ports will propagate to all spawned brazing nodes inside of the template.  
+The analog and digital outputs for the brazing node can be selected in the node itself (for the outside of the template, standalone operation) or in the “UF Brazing” template node. In the latter case, the selected ports will propagate to all spawned brazing nodes inside of the template.
+
+
+
+  
