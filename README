@@ -1,6 +1,9 @@
 README
 
-The purpose of this URCap is to provide a convenient way to setup the robot’s movements and brazing joints parameters for sequential brazing of an arbitrary number of joints. 
+The purpose of this URCap is to provide an example of how you can set up Universal Robots to work with Ultraflex Power Robobraze.
+https://ultraflexpower.com/induction-products/induction-heating-systems/solo-robobraze-series/
+
+It shows a  way to set up the robot’s movements and brazing joint parameters for sequential brazing of an arbitrary number of joints. 
 
  
 
@@ -12,9 +15,9 @@ Brazing node (“UF Brazing Node”).
 
 Brazing Template node 
 
-Brazing Template node generates user selected number of joints to braze. 
+The Brazing Template node generates user selected number of joints to braze. 
 
-Each spawned joint is a folder node consisting of a move node designated “Approach Nodes” and a move node designated “Joint Nodes”.  
+Each spawned joint is a folder node consisting of a moving node designated “Approach Nodes” and a moving node designated “Joint Nodes”.  
 
 Approach nodes are meant to guide the robot from its current position to the position close to the target brazing joint. The approach Node Parameters section of the “UF Brazing” node allows the robot to set speed and acceleration while traversing approach nodes. Since this trajectory doesn’t require precise movements, “Approach Node Parameters” are meant to be faster than those for Joint Nodes. Additionally, to reduce robot lock-ups approach nodes use MoveJ type of movement, and both speed and acceleration is set in deg/sec of rotation of the robot’s joints. 
 
