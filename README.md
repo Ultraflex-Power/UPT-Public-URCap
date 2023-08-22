@@ -13,7 +13,7 @@ Brazing template node (“UF Brazing Template”)
 
 Brazing node (“UF Brazing Node”). 
 
-Brazing Template node 
+## Brazing Template node 
 
 The Brazing Template node generates user selected number of joints to braze. 
 
@@ -25,7 +25,7 @@ Joint nodes, namely “JoinX” node and “ExitX” (X – is the number of the
 
 The brazing template node can be run only when all the approach and joint nodes' waypoints are set up (no yellow nodes). 
 
-Brazing node 
+## Brazing node 
 
 The brazing node when run, sets the heating power (via a 4-20mA analog output) over the selected time delay to apply the heat. Its internal operation sets the analog output to the selected value, enables a digital output to start the heat, waits for the chosen time, and turns off the digital output to end the heat. 
 
